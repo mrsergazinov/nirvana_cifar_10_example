@@ -121,6 +121,8 @@ class ViT(nn.Module):
             nn.Linear(self.latent_size, self.num_classes),
         )
 
+        print(f"Initialized ViT with\n\tnum_encoders={self.num_encoders}\n\tlatent_size={self.latent_size}\n\tnum_classes={self.num_classes}\n\tdropout={self.dropout}")
+
     def forward(self, test_input):
         enc_output = self.embedding(test_input)
         for enc_layer in self.encoders:
